@@ -3,6 +3,14 @@
     <div class="header" :style="{background: column.colorColumn}">
         <span class="title">{{ column.name }}</span>
     </div>
+    <div
+      v-if="column.items.length"
+      class="content"
+    >
+      <template v-for="item in column.items">
+        <CardItem :item="item"/>
+      </template>
+    </div>
   </div>
 </template>
 

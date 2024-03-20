@@ -1,7 +1,7 @@
 export interface ICard {
     id: number,
     text: string,
-    status: STATUS,
+    status?: STATUS,
     row: number,
     seq_num: number,
 }

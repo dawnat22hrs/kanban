@@ -33,6 +33,18 @@ useSeoMeta({
             display: grid;
             grid-template-columns: 250px 250px 250px 250px;
             gap: 20px;
+
+            @media screen and (max-width: 1100px) {
+                grid-template-columns: 250px 250px 250px;
+            }
+
+            @media screen and (max-width: 820px) {
+                grid-template-columns: 250px 250px;
+            }
+
+            @media screen and (max-width: 540px) {
+                grid-template-columns: 250px;
+            }
         }
     }
 </style>

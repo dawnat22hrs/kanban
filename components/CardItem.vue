@@ -1,18 +1,23 @@
 <template>
   <div class="item">
-    <span class="text-bold">id: <span>1</span></span>
-    <span>zmf;km;mvdsdmsmvmsdmsd sfdv sdvv sdwwwc s</span>
+    <span class="text-bold">id: <span>{{ item.id }}</span></span>
+    <div class="text">
+      <span>{{ item.text }}</span>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { type ICard } from './kanban/kanban.types';
 
+defineProps<({
+  item: ICard,
+})>()
 </script>
 
 <style scoped lang="scss">
 .item {
-  box-sizing: border-box;
-  width: 200px;
+  width: 210px;
   height: 80px;
   background-color: #22272B;
   border: 10px solid #464E56;
@@ -20,6 +25,15 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
+
+  .text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    background: none;
+  }
 
   span {
     background: none;
