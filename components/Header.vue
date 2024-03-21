@@ -2,9 +2,16 @@
   <header>
     <div class="btn-block">
       <Button
+        v-if="authStore.isAuth"
         @click="console.log(1)"
       >
         выход
+      </Button>
+      <Button
+        v-else
+        @click="modalStore.toggleVisible"
+      >
+        вход
       </Button>
     </div>
     <BurgerMenu style="position: absolute; right: 30px;"/>
@@ -12,7 +19,11 @@
 </template>
 
 <script lang="ts" setup>
+import { useAuthStore } from '~/store/auth.store'
+import { useModalStore } from '~/store/modal.store'
 
+const authStore = useAuthStore()
+const modalStore = useModalStore()
 </script>
 
 <style scoped lang="scss">

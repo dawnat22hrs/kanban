@@ -17,6 +17,10 @@ export default defineNuxtConfig({
           ital: [100]
         },
       }
-  }],
-  ]
+    }],
+    '@pinia/nuxt',
+  ],
+  pinia: {
+    storesDirs: ['./store/**']
+  }
 })
